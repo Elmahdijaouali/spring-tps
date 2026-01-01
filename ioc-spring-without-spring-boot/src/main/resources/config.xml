@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean id="dao1"  class="com.test_spring_project.daos.Dao1" lazy-init="true" />
+    <bean id="dao2"  class="com.test_spring_project.daos.Dao2" lazy-init="true"  />
+
+    <bean id="controller"  class="com.test_spring_project.controller.Controller" lazy-init="true"  >
+        <constructor-arg ref="dao2" />
+    </bean>
+
+    <bean id="view3"  class="com.test_spring_project.views.View3" lazy-init="true"  />
+
+</beans>
